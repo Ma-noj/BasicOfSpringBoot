@@ -5,11 +5,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserController {
-	@PostMapping("/login")
-	public String login(@RequestBody User user) {
-		return "<h1> UserEmail = " + user.getEmail() 
-		+ "   UserPassword = " + user.getPassword() + "</h1>";
+public class EmployeeController {
+	@PostMapping("/employees/save")
+	public Employee saveEmployee(@RequestBody Employee employee) {
+		System.err.println("Employee Name = " + employee.getEmployeeName());
+		return employee;
 	}
 }
- 
