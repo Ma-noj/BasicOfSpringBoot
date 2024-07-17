@@ -1,0 +1,181 @@
+Webservices is a services Which helps to 2 application to interact with 
+each other over a network.
+
+Application as to send a request to the webservice to generate the response
+and given back so that the response will be displayed to the use.
+
+
+To design webservice in java we will use the Spring Framework
+ in the Spring Framework we are going to use the Spring Boot Model. 
+
+Way To pass the Input in the Application
+1)Query Parameters
+2)Path Variable 
+
+3) XML
+4) JSON
+5) Text
+
+
+
+
+
+class User {
+
+int userId;
+String username;
+String userEmail;
+String userPassword;
+//Getter
+//Setter
+
+}
+
+JSON Format to 
+
+
+{
+  "username":"raju",
+  "userEmail:"raju@abc.in",
+  "userPassword":"raju@123"
+}
+
+
+
+
+Steps To Create Spring Boot Application
+
+1-> https://start.spring.io
+2-> SELECT Project Type as MAVEN
+3-> SELECT the Language As JAVA
+4-> SELECT the Spring Boot Version( Prefeed to use the Latest or version not missioned as SNAPSHOT)
+5-> Provided the basic Project Metadata info 
+
+6-> Add the required Dependencies  
+
+
+Steps to add the Spring boot application to the ECLIPSE
+1->  Extract the .zip file downloaded from https://start.spring.io
+2->  Open the Extracted file and copy the path where u can see src and pom.xml file
+3-> Open Eclipse and select file
+4-> Select the Import Option and search for Maven
+5-> SELECT the Option Existing Maven Project and paste the Path in the root path and click enter and click FINISH..
+
+
+
+@SpringBootApplication--> will be annotation to a class to which act as the starter class
+it's a combination of configuration , EnableAutoConfiguration an dthe ComponetScan
+
+
+@RestController --> It's a combination of @Controller and @ResponbseBody
+
+Using @RestController we will be not able to send the view(Like .html Files)
+
+
+URL -> for Display Service/REST API is
+		Default 	Apache Tomcat
+	HTTP-> 80		8080
+	HTTPS->443		8443
+	
+http://HostName:8080/display
+
+
+
+http://localhost:8080/login?email=ram@abc.in&password=ram@123
+
+
+@RequestParam
+
+-> Use of @RequestParam is read the info from the request which are in the form of Query Parameters
+
+
+-> @RequestParam(name = "pass") When user wants to use a different send the Info in Query Parameters at that time we will use the name Attribute 
+
+--> @RequestParam(required = false) When we use the required Attribute and set it as required= false
+ at that time Using Query Parameter is Optional to pass Value..
+  By Default required Attribute will be set to Ture..
+
+
+--------------------------------------------------------
+
+@PathVariable
+	("/resource/{varbileName})
+ This annotation is used to read the input from the user in the request. it will help to read the Input 
+  which are the Uri Request..
+
+--> @PathVariable(required = false) When we use the required Attribute and set it as required= false
+ at that time in the URL path passing the Values is Optional..
+
+-> @PathVariable(name = "key") we will use the name attribute When we are using different variables0 in the Resources and the Variable in the Method..
+
+ By Default required Attribute will be set to Ture..
+
+
+
+http://localhost:8080/findByEmail/pavan@abc.in
+
+
+
+
+/login
+
+
+ email = pavan@abc.in
+ password = pavan@123
+
+{
+ "email":"pavan@abc.in",
+ "password": "pavan@123"
+}
+
+
+
+When We have a Has-a Relationship  
+class Company{
+	
+	int companyId;
+	String companyName;
+	Gst gst;
+}
+
+
+class Gst{
+ int gstId;
+ String gstNumber;
+}
+
+
+{
+	"companyId":101,
+	"companyName": "ABC",
+	"gst":{
+		"gstId":201,
+		"gstNumber":"25TRDS768"
+		}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
