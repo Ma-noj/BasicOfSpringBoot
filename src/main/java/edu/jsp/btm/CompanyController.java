@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class CompanyController {
 	@PostMapping("/company/save")
 	public String saveCompany(@RequestBody Company company) {
-		return "CompanyId = " + company.getCompanyId() + " Compnay GST Number = " + company.getGst().getGstNumber();
+		return "CompanyId = " + company.getCompanyId() + 
+				" Compnay GST Number = " + company.getGst().getGstNumber();
 	}
 
 }
